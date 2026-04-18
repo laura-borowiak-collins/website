@@ -353,9 +353,10 @@ const floatingQuoteSettings = {
   visibleDuration: 9000,
   exitDuration: 420,
   maxVisible: 4,
-  minViewportWidth: 1080,
-  marginGap: 18,
-  minMarginWidth: 230,
+  minViewportWidth: 980,
+  marginGap: 12,
+  minQuoteWidth: 112,
+  quoteMaxWidth: 208,
 };
 let quoteCycleId = null;
 let lastQuoteKey = "";
@@ -811,18 +812,39 @@ function canUseQuotePosition(positionClass, metrics) {
   }
 
   const marginWidth = config.side === "left" ? metrics.leftMarginWidth : metrics.rightMarginWidth;
-  return marginWidth >= floatingQuoteSettings.minMarginWidth;
+  const availableWidth = marginWidth - floatingQuoteSettings.marginGap * 2;
+
+  return availableWidth >= floatingQuoteSettings.minQuoteWidth;
+}
+
+function getQuoteWidth(positionClass, metrics) {
+  const config = quotePositionMap[positionClass];
+
+  if (!config) {
+    return null;
+  }
+
+  const marginWidth = config.side === "left" ? metrics.leftMarginWidth : metrics.rightMarginWidth;
+  const availableWidth = marginWidth - floatingQuoteSettings.marginGap * 2;
+
+  if (availableWidth < floatingQuoteSettings.minQuoteWidth) {
+    return null;
+  }
+
+  return Math.min(floatingQuoteSettings.quoteMaxWidth, availableWidth);
 }
 
 function applyQuotePosition(quoteBox, positionClass) {
   const metrics = getQuoteMarginMetrics();
   const config = quotePositionMap[positionClass];
+  const quoteWidth = metrics ? getQuoteWidth(positionClass, metrics) : null;
 
-  if (!metrics || !config || !canUseQuotePosition(positionClass, metrics)) {
+  if (!metrics || !config || !quoteWidth) {
     return false;
   }
 
-  const quoteWidth = quoteBox.offsetWidth;
+  quoteBox.style.width = `${quoteWidth}px`;
+
   const quoteHeight = quoteBox.offsetHeight;
   const top = metrics.shellTop + (metrics.shellHeight - quoteHeight) * config.topRatio;
   const viewportLeft = window.scrollX;
