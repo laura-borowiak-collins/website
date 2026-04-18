@@ -7,6 +7,7 @@ const tabsSection = document.getElementById("profile-tabs");
 const playsList = document.getElementById("plays-list");
 const unassignedSourceList = document.getElementById("unassigned-source-list");
 const unassignedSourcesCard = document.getElementById("unassigned-sources");
+const pageShell = document.querySelector(".page-shell");
 const glitterLayer = document.createElement("div");
 const quoteLayer = document.createElement("div");
 const providedLinks = {
@@ -23,6 +24,58 @@ const providedLinks = {
     "https://theupsidenews.com/2020/02/26/fringe-review-plastisphere-the-long-room-at-the-treasury-1860-2020/",
   bleached: "https://thewestsider.com.au/bleached-a-local-production-exploring-our-mixed-responses-to-the-climate-crisis/",
 };
+
+const playImages = {
+  dogCalledMonkey: [
+    "images/dog_called_monkey.jpg",
+    "images/A DOG CALLED MONKEY_POSTER.JPG",
+    "images/A DOG CALLED MONKEY 03.PNG",
+    "images/A DOG CALLED MONKEY 04.PNG",
+    "images/A DOG CALLED MONKEY 05.JPG",
+  ],
+  alternativeFutures: [
+    "images/ALT_01.jpg",
+    "images/ALT_03.jpg",
+    "images/ALT_04.jpg",
+    "images/ALT_05.jpg",
+    "images/ALT_06.jpg",
+  ],
+  caveOfSpleen: [
+    "images/THE CAVE OF SPLEEN_03.JPG",
+    "images/THE CAVE OF SPLEEN_04.JPG",
+    "images/THE CAVE OF SPLEEN_05.JPG",
+    "images/THE CAVE OF SPLEEN 4.JPG",
+  ],
+  kaleidoscope: [
+    "images/KALEIDOSCOPE_00.jpg",
+    "images/KALEIDOSCOPE_01.jpeg",
+    "images/KALEIDOSCOPE_03.jpeg",
+    "images/KALEIDOSCOPE_04.jpeg",
+    "images/KALEIDOSCOPE_06.jpeg",
+    "images/KALEIDOSCOPE_07.jpeg",
+    "images/KALEIDOSCOPE_08.jpeg",
+    "images/KALEIDOSCOPE_09.jpeg",
+    "images/KALEIDOSCOPE_10.jpeg",
+  ],
+  bleached: [
+    "images/BLEACHED_00.jpg",
+    "images/BLEACHED_01.jpg",
+    "images/BLEACHED_02.jpg",
+    "images/BLEACHED_03.jpg",
+    "images/BLEACHED_05.jfif",
+    "images/BLEACHED_07.PNG",
+    "images/BLEACHED_08.PNG",
+    "images/BLEACHED_09.PNG",
+    "images/BLEACHED_WIT_01.jpeg",
+  ],
+  plastisphere: [
+    "images/PLASTISPHERE.JPG",
+    "images/PLASTISPHERE_03.JPG",
+    "images/PLASTISPHERE_JacintaKeefePhotography-20.jpg",
+    "images/PLASTISPHERE_JacintaKeefePhotography-62.jpg",
+  ],
+};
+
 const playsData = [
   {
     title: "A Dog Called Monkey",
@@ -64,7 +117,7 @@ const playsData = [
       },
     ],
     links: [providedLinks.dogReview, providedLinks.mainCourse],
-    images: ["Image placeholder", "Image placeholder", "Image placeholder"],
+    images: playImages.dogCalledMonkey,
   },
   {
     title: "Alternative Futures",
@@ -94,16 +147,35 @@ const playsData = [
     ],
     reviews: [],
     links: [providedLinks.alternativeFutures, providedLinks.alternativeFuturesVideo],
-    images: ["Image placeholder", "Image placeholder", "Image placeholder"],
+    images: playImages.alternativeFutures,
   },
   {
     title: "The Cave Of Spleen",
-    dates: [],
-    description: [],
-    cast_and_crew: [],
+    dates: [
+      { text: "Post-show Q&A with climate scientists after the performance on 8th of August." },
+    ],
+    description: [
+      { text: "\"We gonna blow something up or what?\"" },
+      {
+        text: "Four women meet in a cave to plan the ultimate act of environmental activism. They rage against climate change. They rage against men. They rage against each other. But a mysterious illness squeezes the anger out of their brains, one by one.",
+      },
+      {
+        text: "The Cave of Spleen explores the complexities of eco-feminism, female rage and chronic pain, and asks: is the expectation for women to suppress their anger the reason our bodies are crumbling into the ocean?",
+      },
+      {
+        text: "The work looks at the climate crisis through the lens of disability and eco-feminism, drawing links between chronic pain and anger.",
+      },
+    ],
+    cast_and_crew: [{ text: "By Laura Collins." }],
+    accessibility: [
+      {
+        text: "The premiere season was not able to accommodate different accessibility needs, despite the work engaging with disability and ecofeminism.",
+      },
+      { text: "Audience members are invited to get in touch with any questions or concerns." },
+    ],
     reviews: [],
     links: [providedLinks.caveOfSpleen],
-    images: ["Image placeholder", "Image placeholder", "Image placeholder"],
+    images: playImages.caveOfSpleen,
   },
   {
     title: "Bleached",
@@ -134,7 +206,7 @@ const playsData = [
       },
     ],
     links: [providedLinks.bleachedHighlighted, providedLinks.bleached],
-    images: ["Image placeholder", "Image placeholder", "Image placeholder"],
+    images: playImages.bleached,
   },
   {
     title: "Plastisphere",
@@ -162,7 +234,61 @@ const playsData = [
       },
     ],
     links: [providedLinks.plastisphereAuslan, providedLinks.plastisphereReview],
-    images: ["Image placeholder", "Image placeholder", "Image placeholder"],
+    images: playImages.plastisphere,
+  },
+  {
+    title: "Kaleidoscope",
+    dates: [
+      { text: "Open Access Hour: Saturday 22nd November, 4.30pm - 5.30pm." },
+      {
+        text: "Audio described performances: Friday 28th at 7pm and Saturday 29th at 1.30pm, with pre-show tactile tours 30 minutes beforehand.",
+      },
+      { text: "Inclement weather contingency: Sunday 30th November at 7.30pm." },
+    ],
+    description: [
+      { text: "What do rule breakers and butterflies share? A collective noun: a rabble." },
+      {
+        text: "Enter the Kaleidoscope, and meet a rabble of rebels - born from the bricks of Balam Balam Place. They're here to hunt for the broken bits and test the limits of law and gravity. Join their technicolour rebellion and discover what happens when you dare to defy the rules and fly free.",
+      },
+      {
+        text: "City of Voices is an inclusive theatre company that creates devised, ensemble-driven and accessible work. The ensemble has been running in South Melbourne for 34 years and is proudly devoted to one another, their community, and making performance together.",
+      },
+    ],
+    cast_and_crew: [
+      {
+        text: "Created and performed by the City of Voices ensemble: Gizem Acaroglu, Athina Alexandrou, Paul Cruickshank, Michael Gatt, Mengxia (Mia) Gu, Linda Jane Marsh, Bronwyn Phillips, Kate Scholl, Mark Smith, Yanina Vandenberg, Amber Williams.",
+      },
+      { text: "Directed by Milly Cooper." },
+      { text: "Script curation: Laura Collins." },
+      { text: "Support artists: Geoffrey Thornson & Laura Collins." },
+      { text: "Company manager: Emma Fawcett." },
+      { text: "Costume designer: Samantha Hastings." },
+      { text: "Composer: Rachel Lewindon." },
+      { text: "Lighting designer: Spencer Herd." },
+      { text: "Production Manager: Jacinta Anderson." },
+      { text: "Stage manager: Ellen Perriment." },
+      { text: "Technical Operator: Samar Uraizee." },
+      { text: "Graphic designer: Maxine Palmerson." },
+      { text: "Photo: Gilda Jones." },
+    ],
+    accessibility: [
+      { text: "This piece is experienced through over-ear headphones." },
+      { text: "The work has a Visual Rating of 50% and an Aural Rating of 50%." },
+      {
+        text: "This is a partially outdoor event, with about 50% of the experience without cover, so audiences should check the weather and dress for sun, rain, and cool November conditions.",
+      },
+      { text: "The show is wheelchair and flat-access accessible, and there is an accessible bathroom." },
+      { text: "This is a Relaxed Season, with a Break Out Room available for all performances." },
+      { text: "Masks will be available for all performances." },
+      {
+        text: "This is a slow roving work, and audience members will be asked to move at intervals; seating can be arranged when booking or on arrival.",
+      },
+      { text: "Parking can be tricky in Brunswick, so allow extra time if driving." },
+      { text: "For access questions, contact Artistic Director Milly Cooper on 0478023844." },
+    ],
+    reviews: [],
+    links: [],
+    images: playImages.kaleidoscope,
   },
 ];
 const unassignedSources = [
@@ -175,22 +301,32 @@ const floatingQuotes = [
   {
     text: "trauma into art.",
     source: "A Dog Called Monkey",
+    images: playImages.dogCalledMonkey,
   },
   {
     text: "a real sense of intoxication and of the loss of mental and physical control.",
     source: "A Dog Called Monkey",
+    images: playImages.dogCalledMonkey,
   },
   {
     text: "share their fantasy-filled predictions of what the future may hold",
     source: "Alternative Futures",
+    images: playImages.alternativeFutures,
+  },
+  {
+    text: "dare to defy the rules and fly free.",
+    source: "Kaleidoscope",
+    images: playImages.kaleidoscope,
   },
   {
     text: "Bleached offers a chance to explore how many younger people view our future.",
     source: "Bleached",
+    images: playImages.bleached,
   },
   {
     text: "an intriguing side-journey for your commute home or night-out.",
     source: "Plastisphere",
+    images: playImages.plastisphere,
   },
 ];
 const quotePositions = [
@@ -201,13 +337,33 @@ const quotePositions = [
   "quote-box--south-left",
   "quote-box--south-right",
 ];
+const quotePositionMap = {
+  "quote-box--north-left": { side: "left", topRatio: 0.06 },
+  "quote-box--north-right": { side: "right", topRatio: 0.1 },
+  "quote-box--mid-left": { side: "left", topRatio: 0.36 },
+  "quote-box--mid-right": { side: "right", topRatio: 0.42 },
+  "quote-box--south-left": { side: "left", topRatio: 0.7 },
+  "quote-box--south-right": { side: "right", topRatio: 0.76 },
+};
 const activeQuotePositions = new Set();
+const activeQuoteKeys = new Set();
+const floatingQuoteSettings = {
+  initialDelay: 700,
+  spawnInterval: 2600,
+  visibleDuration: 9000,
+  exitDuration: 420,
+  maxVisible: 4,
+  minViewportWidth: 1080,
+  marginGap: 18,
+  minMarginWidth: 230,
+};
 let quoteCycleId = null;
-let lastQuoteIndex = -1;
+let lastQuoteKey = "";
 
 glitterLayer.className = "glitter-layer";
 quoteLayer.className = "quote-layer";
-document.body.append(glitterLayer, quoteLayer);
+document.body.append(glitterLayer);
+document.body.append(quoteLayer);
 
 function createExternalLink(href, text, className) {
   const link = document.createElement("a");
@@ -310,7 +466,7 @@ function buildImagePlaceholders(images) {
 
   wrapper.className = "play-media";
   scroller.className = "play-image-scroll";
-  scroller.setAttribute("aria-label", "Image placeholders");
+  scroller.setAttribute("aria-label", "Images");
   wrapper.append(scroller);
 
   if (!images.length) {
@@ -318,20 +474,14 @@ function buildImagePlaceholders(images) {
     return wrapper;
   }
 
-  images.forEach((label, index) => {
-    const placeholder = document.createElement("div");
-    const title = document.createElement("span");
-    const meta = document.createElement("strong");
-
-    placeholder.className = "play-image-placeholder";
-    title.className = "play-image-placeholder__label";
-    meta.className = "play-image-placeholder__meta";
-
-    title.textContent = label;
-    meta.textContent = `Placeholder ${String(index + 1).padStart(2, "0")}`;
-
-    placeholder.append(title, meta);
-    scroller.append(placeholder);
+  images.forEach((imagePath, index) => {
+    const img = document.createElement("img");
+    
+    img.className = "play-image";
+    img.src = imagePath;
+    img.alt = `Play image ${index + 1}`;
+    
+    scroller.append(img);
   });
 
   return wrapper;
@@ -343,7 +493,7 @@ function renderPlayEntry(play, index) {
   const titleGroup = document.createElement("div");
   const title = document.createElement("h3");
   const indexTag = document.createElement("span");
-  const media = buildImagePlaceholders(play.images);
+  const media = buildImagePlaceholders(play.images ?? []);
   const toggleButton = document.createElement("button");
   const details = document.createElement("div");
   const grid = document.createElement("div");
@@ -352,6 +502,12 @@ function renderPlayEntry(play, index) {
   const castField = createField("Cast & Crew");
   const linksField = createField("Links", ["play-field--span"]);
   const detailsId = `play-details-${index + 1}`;
+  const descriptionEntries = play.description ?? [];
+  const dateEntries = play.dates ?? [];
+  const castEntries = play.cast_and_crew ?? [];
+  const accessibilityEntries = play.accessibility ?? [];
+  const reviewEntries = play.reviews ?? [];
+  const linkEntries = play.links ?? [];
 
   article.className = "play-entry";
 
@@ -374,17 +530,24 @@ function renderPlayEntry(play, index) {
   details.hidden = true;
   grid.className = "play-entry__grid";
 
-  descriptionField.append(buildParagraphEntries(play.description));
-  datesField.append(buildListEntries(play.dates));
-  castField.append(buildListEntries(play.cast_and_crew));
-  linksField.append(buildLinkEntries(play.links));
+  descriptionField.append(buildParagraphEntries(descriptionEntries));
+  datesField.append(buildListEntries(dateEntries));
+  castField.append(buildListEntries(castEntries));
+  linksField.append(buildLinkEntries(linkEntries));
 
   grid.append(descriptionField, datesField, castField);
 
-  if (play.reviews.length) {
+  if (accessibilityEntries.length) {
+    const accessibilityField = createField("Accessibility");
+
+    accessibilityField.append(buildListEntries(accessibilityEntries));
+    grid.append(accessibilityField);
+  }
+
+  if (reviewEntries.length) {
     const reviewsField = createField("Reviews", ["play-field--span"]);
 
-    reviewsField.append(buildParagraphEntries(play.reviews.map((review) => ({ text: review.quote, source: review.source }))));
+    reviewsField.append(buildParagraphEntries(reviewEntries.map((review) => ({ text: review.quote, source: review.source }))));
     grid.append(reviewsField);
   }
 
@@ -585,24 +748,137 @@ function spawnGlitterBurst(event) {
 }
 
 function pickFloatingQuote() {
-  let nextIndex = Math.floor(Math.random() * floatingQuotes.length);
+  const availableQuotes = floatingQuotes.filter((quote) => !activeQuoteKeys.has(getFloatingQuoteKey(quote)));
+  const quotePool = availableQuotes.length ? availableQuotes : floatingQuotes;
+  let nextQuote = quotePool[Math.floor(Math.random() * quotePool.length)];
 
-  if (floatingQuotes.length > 1 && nextIndex === lastQuoteIndex) {
-    nextIndex = (nextIndex + 1 + Math.floor(Math.random() * (floatingQuotes.length - 1))) % floatingQuotes.length;
+  if (quotePool.length > 1 && getFloatingQuoteKey(nextQuote) === lastQuoteKey) {
+    const alternateQuotes = quotePool.filter((quote) => getFloatingQuoteKey(quote) !== lastQuoteKey);
+
+    if (alternateQuotes.length) {
+      nextQuote = alternateQuotes[Math.floor(Math.random() * alternateQuotes.length)];
+    }
   }
 
-  lastQuoteIndex = nextIndex;
-  return floatingQuotes[nextIndex];
+  lastQuoteKey = getFloatingQuoteKey(nextQuote);
+  return nextQuote;
 }
 
 function pickQuotePosition() {
-  const availablePositions = quotePositions.filter((position) => !activeQuotePositions.has(position));
+  const metrics = getQuoteMarginMetrics();
+
+  if (!metrics) {
+    return null;
+  }
+
+  const availablePositions = quotePositions.filter(
+    (position) => !activeQuotePositions.has(position) && canUseQuotePosition(position, metrics),
+  );
 
   if (availablePositions.length === 0) {
     return null;
   }
 
   return availablePositions[Math.floor(Math.random() * availablePositions.length)];
+}
+
+function getFloatingQuoteKey(quote) {
+  return `${quote.source}::${quote.text}`;
+}
+
+function getQuoteMarginMetrics() {
+  if (!pageShell) {
+    return null;
+  }
+
+  const shellRect = pageShell.getBoundingClientRect();
+
+  return {
+    shellLeft: shellRect.left + window.scrollX,
+    shellRight: shellRect.right + window.scrollX,
+    shellTop: shellRect.top + window.scrollY,
+    shellHeight: pageShell.offsetHeight,
+    leftMarginWidth: shellRect.left,
+    rightMarginWidth: window.innerWidth - shellRect.right,
+  };
+}
+
+function canUseQuotePosition(positionClass, metrics) {
+  const config = quotePositionMap[positionClass];
+
+  if (!config) {
+    return false;
+  }
+
+  const marginWidth = config.side === "left" ? metrics.leftMarginWidth : metrics.rightMarginWidth;
+  return marginWidth >= floatingQuoteSettings.minMarginWidth;
+}
+
+function applyQuotePosition(quoteBox, positionClass) {
+  const metrics = getQuoteMarginMetrics();
+  const config = quotePositionMap[positionClass];
+
+  if (!metrics || !config || !canUseQuotePosition(positionClass, metrics)) {
+    return false;
+  }
+
+  const quoteWidth = quoteBox.offsetWidth;
+  const quoteHeight = quoteBox.offsetHeight;
+  const top = metrics.shellTop + (metrics.shellHeight - quoteHeight) * config.topRatio;
+  const viewportLeft = window.scrollX;
+  const viewportRight = window.scrollX + window.innerWidth;
+  let left = metrics.shellLeft - quoteWidth - floatingQuoteSettings.marginGap;
+
+  if (config.side === "right") {
+    left = metrics.shellRight + floatingQuoteSettings.marginGap;
+  }
+
+  if (left < viewportLeft + floatingQuoteSettings.marginGap) {
+    return false;
+  }
+
+  if (left + quoteWidth > viewportRight - floatingQuoteSettings.marginGap) {
+    return false;
+  }
+
+  quoteBox.style.left = `${left}px`;
+  quoteBox.style.top = `${Math.max(0, top)}px`;
+
+  return true;
+}
+
+function releaseFloatingQuote(quoteBox) {
+  const { positionClass, quoteKey } = quoteBox.dataset;
+
+  if (positionClass) {
+    activeQuotePositions.delete(positionClass);
+  }
+
+  if (quoteKey) {
+    activeQuoteKeys.delete(quoteKey);
+  }
+
+  quoteBox.remove();
+}
+
+function refreshFloatingQuotePositions() {
+  Array.from(quoteLayer.children).forEach((quoteBox) => {
+    const { positionClass } = quoteBox.dataset;
+
+    if (!positionClass || applyQuotePosition(quoteBox, positionClass)) {
+      return;
+    }
+
+    releaseFloatingQuote(quoteBox);
+  });
+}
+
+function pickQuoteImage(quote) {
+  if (!quote.images?.length) {
+    return null;
+  }
+
+  return quote.images[Math.floor(Math.random() * quote.images.length)];
 }
 
 function typeQuoteText(element, text, onComplete) {
@@ -621,26 +897,46 @@ function typeQuoteText(element, text, onComplete) {
 }
 
 function spawnFloatingQuote() {
-  if (document.hidden || window.innerWidth < 1080 || quoteLayer.childElementCount >= 2) {
+  if (
+    document.hidden ||
+    window.innerWidth < floatingQuoteSettings.minViewportWidth ||
+    quoteLayer.childElementCount >= floatingQuoteSettings.maxVisible
+  ) {
     return;
   }
 
   const quote = pickFloatingQuote();
+  const quoteKey = getFloatingQuoteKey(quote);
   const positionClass = pickQuotePosition();
+  const quoteImagePath = pickQuoteImage(quote);
 
   if (!positionClass) {
     return;
   }
 
   const quoteBox = document.createElement("aside");
+  const quoteMedia = document.createElement("figure");
+  const quoteImage = document.createElement("img");
   const quoteText = document.createElement("p");
   const quoteSource = document.createElement("span");
   let typingTimer = null;
 
   activeQuotePositions.add(positionClass);
+  activeQuoteKeys.add(quoteKey);
 
   quoteBox.className = `quote-box quote-box--typing ${positionClass}`;
   quoteBox.setAttribute("aria-hidden", "true");
+  quoteBox.dataset.positionClass = positionClass;
+  quoteBox.dataset.quoteKey = quoteKey;
+
+  if (quoteImagePath) {
+    quoteMedia.className = "quote-box__media";
+    quoteImage.className = "quote-box__image";
+    quoteImage.src = quoteImagePath;
+    quoteImage.alt = `${quote.source} production image`;
+    quoteMedia.append(quoteImage);
+    quoteBox.append(quoteMedia);
+  }
 
   quoteText.className = "quote-box__text";
   quoteSource.className = "quote-box__source";
@@ -648,6 +944,11 @@ function spawnFloatingQuote() {
 
   quoteBox.append(quoteText, quoteSource);
   quoteLayer.append(quoteBox);
+
+  if (!applyQuotePosition(quoteBox, positionClass)) {
+    releaseFloatingQuote(quoteBox);
+    return;
+  }
 
   requestAnimationFrame(() => {
     quoteBox.classList.add("is-visible");
@@ -661,12 +962,11 @@ function spawnFloatingQuote() {
   window.setTimeout(() => {
     window.clearInterval(typingTimer);
     quoteBox.classList.add("is-leaving");
-  }, 5000);
+  }, floatingQuoteSettings.visibleDuration);
 
   window.setTimeout(() => {
-    activeQuotePositions.delete(positionClass);
-    quoteBox.remove();
-  }, 5080);
+    releaseFloatingQuote(quoteBox);
+  }, floatingQuoteSettings.visibleDuration + floatingQuoteSettings.exitDuration);
 }
 
 function startFloatingQuotes() {
@@ -674,13 +974,14 @@ function startFloatingQuotes() {
     return;
   }
 
-  window.setTimeout(spawnFloatingQuote, 500);
-  quoteCycleId = window.setInterval(spawnFloatingQuote, 5000);
+  window.setTimeout(spawnFloatingQuote, floatingQuoteSettings.initialDelay);
+  quoteCycleId = window.setInterval(spawnFloatingQuote, floatingQuoteSettings.spawnInterval);
 }
 
 if (!reducedMotionQuery.matches) {
   document.addEventListener("pointermove", updateSpotlight, { passive: true });
   document.addEventListener("pointerdown", spawnGlitterBurst);
+  window.addEventListener("resize", refreshFloatingQuotePositions, { passive: true });
   startFloatingQuotes();
 
   tiltElements.forEach((element) => {
