@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laura | Portfolio &amp; Resume</title>
+  <meta
+    name="description"
+    content="Laura's portfolio and resume site, featuring selected work, credits, contact details, and a distinctly custom visual world."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient-shapes" aria-hidden="true">
+    <span class="ambient-shape ambient-shape--pink"></span>
+    <span class="ambient-shape ambient-shape--green"></span>
+    <span class="ambient-shape ambient-shape--purple"></span>
+    <span class="ambient-shape ambient-shape--yellow"></span>
+    <span class="ambient-shape ambient-shape--ribbon"></span>
+    <span class="ambient-shape ambient-shape--dot-cluster"></span>
+  </div>
+  <div class="page-shell">
+    <!-- <header class="site-chrome reveal" id="top">
+      <a class="brand" href="#top">
+        <span class="brand__name">Laura</span>
+        <span class="brand__tag">performance • live art • devised work</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <button class="site-nav__button is-active" type="button" data-open-tab="panel-about">About</button>
+        <button class="site-nav__button" type="button" data-open-tab="panel-resume">Credits</button>
+        <button class="site-nav__button" type="button" data-open-tab="panel-work">Plays</button>
+        <button class="site-nav__button" type="button" data-open-tab="panel-contact">Contact</button>
+      </nav>
+
+      <a class="site-chrome__mail" href="mailto:laura.rose.collins1@gmail.com">Say Hello</a>
+    </header> -->
+
+    <main>
+      <section class="hero">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Melbourne-based counsellor, writer &amp; theatre-maker</p>
+          <h1 class="hero__title">
+            <span>Laura</span>
+            <span>makes work</span>
+            <span>with spark.</span>
+          </h1>
+          <p class="hero__lede">
+            Counsellor, writer, and installation artist integrating creative and compassionate approaches to mental health care.
+          </p>
+
+          <div class="hero__notes" aria-label="Quick profile summary">
+            <article class="hero-note" data-tilt>
+              <span class="hero-note__label">Work</span>
+              <strong>Counselling, writing, installation art, and inclusive facilitation</strong>
+            </article>
+            <article class="hero-note" data-tilt>
+              <span class="hero-note__label">Study</span>
+              <strong>Master of Counselling and Master of Writing for Performance</strong>
+            </article>
+            <article class="hero-note" data-tilt>
+              <span class="hero-note__label">Focus</span>
+              <strong>Disability, neurodiversity, the climate crisis, and vulnerable populations</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero__visuals reveal">
+          <figure class="hero__portrait">
+            <img src="images/head_shot.jpg" alt="Portrait of Laura">
+            <div class="hero__badges" aria-hidden="true">
+              <span class="hero__badge hero__badge--one">odd little worlds</span>
+              <span class="hero__badge hero__badge--two">live performance</span>
+              <span class="hero__badge hero__badge--three">new writing</span>
+              <span class="hero__badge hero__badge--four">ensemble work</span>
+            </div>
+          </figure>
+
+          <div class="hero__gallery" aria-hidden="true">
+            <figure class="hero__thumb hero__thumb--one">
+              <img src="images/bleached.jfif" alt="">
+            </figure>
+            <figure class="hero__thumb hero__thumb--two">
+              <img src="images/kalleidescope.jpg" alt="">
+            </figure>
+            <figure class="hero__thumb hero__thumb--three">
+              <img src="images/organised_oddysey.jfif" alt="">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="marquee-strip reveal" aria-label="Creative themes">
+        <div class="marquee-strip__track">
+          <div class="marquee-strip__group">
+            <span>theatre-maker</span>
+            <span>live art</span>
+            <span>ensemble work</span>
+            <span>movement</span>
+            <span>new writing</span>
+            <span>strange tenderness</span>
+          </div>
+          <div class="marquee-strip__group" aria-hidden="true">
+            <span>theatre-maker</span>
+            <span>live art</span>
+            <span>ensemble work</span>
+            <span>movement</span>
+            <span>new writing</span>
+            <span>strange tenderness</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-tabs reveal" id="profile-tabs">
+        <div class="section-heading">
+          <p class="eyebrow">Take A Wander</p>
+          <h2>Selected plays, resume details, and things worth opening.</h2>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Laura portfolio sections">
+          <button class="tab-button is-active" id="tab-about" role="tab" aria-selected="true" aria-controls="panel-about" data-tab-target="panel-about" tabindex="0">
+            <span class="tab-button__index">01</span>
+            <span class="tab-button__label">About</span>
+          </button>
+          <button class="tab-button" id="tab-resume" role="tab" aria-selected="false" aria-controls="panel-resume" data-tab-target="panel-resume" tabindex="-1">
+            <span class="tab-button__index">02</span>
+            <span class="tab-button__label">Credits</span>
+          </button>
+          <button class="tab-button" id="tab-work" role="tab" aria-selected="false" aria-controls="panel-work" data-tab-target="panel-work" tabindex="-1">
+            <span class="tab-button__index">03</span>
+            <span class="tab-button__label">Plays</span>
+          </button>
+          <button class="tab-button" id="tab-contact" role="tab" aria-selected="false" aria-controls="panel-contact" data-tab-target="panel-contact" tabindex="-1">
+            <span class="tab-button__index">04</span>
+            <span class="tab-button__label">Contact</span>
+          </button>
+        </div>
+
+        <div class="tab-panels">
+          <section class="tab-panel is-active" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+            <div class="panel-grid panel-grid--about">
+              <article class="content-card content-card--wide">
+                <p class="eyebrow">About</p>
+                <h3>Counsellor, writer, and installation artist</h3>
+                <p>
+                  Laura Collins holds a Master of Counselling from Monash University and a Master of Writing for Performance from the University of Melbourne.
+                  Passionate about supporting vulnerable populations, she specializes in integrating creative and compassionate approaches to mental health care.
+                </p>
+                <p>
+                  As a writer and installation artist, her work explores themes of disability, neurodiversity, and the climate crisis, merging creativity with pressing social issues.
+                </p>
+              </article>
+
+              <article class="content-card content-card--quote">
+                <p class="eyebrow">Approach</p>
+                <h3>Creative, compassionate, and socially engaged.</h3>
+              </article>
+
+              <article class="content-card content-card--accent">
+                <p class="eyebrow">Currently</p>
+                <h3>Available for</h3>
+                <p>Counselling, inclusive artmaking, workshop facilitation, writing, and performance development.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-resume" role="tabpanel" aria-labelledby="tab-resume" tabindex="0" hidden>
+            <div class="resume-layout">
+              <article class="content-card content-card--wide resume-card">
+                <p class="eyebrow">Resume</p>
+                <h3>Laura Collins</h3>
+                <div class="resume-contact-grid">
+                  <a class="resume-chip" href="mailto:laura.rose.collins1@gmail.com">laura.rose.collins1@gmail.com</a>
+                  <a class="resume-chip" href="tel:0449817371">0449817371</a>
+                  <span class="resume-chip">Unit 6/1 Collins St, Thornbury, VIC 3071</span>
+                </div>
+                <p>
+                  I hold a Master of Counselling from Monash University and a Master of Writing for Performance from the University of Melbourne.
+                  Passionate about supporting vulnerable populations, I specialize in integrating creative and compassionate approaches to mental health care.
+                </p>
+                <p>
+                  My experience includes counselling students at Kingswood College, facilitating inclusive artmaking with City of Voices, and combating loneliness as a volunteer with Friends for Good.
+                  As a writer and installation artist, my work explores themes of disability, neurodiversity, and the climate crisis, merging creativity with pressing social issues.
+                </p>
+              </article>
+
+              <div class="resume-columns">
+                <div class="resume-stack">
+                  <article class="content-card resume-card">
+                    <p class="eyebrow">Education</p>
+                    <div class="credit-list">
+                      <div class="credit-item">
+                        <h3>Master of Counselling</h3>
+                        <p>Monash University / 2024</p>
+                        <ul class="resume-points">
+                          <li>Focus on Cognitive Behavioural Therapy; grief and trauma counselling; advanced ethics and professional issues; contemporary counselling approaches.</li>
+                          <li>Counselling couples, families and groups; counselling in the school years; learning and career counselling; diversity in counselling; tele-health and technology in counselling.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Masters of Writing for Performance (First Class Honours)</h3>
+                        <p>The University of Melbourne / 2018</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Bachelor of Arts with Major in Creative Writing</h3>
+                        <p>The University of Melbourne / 2017</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Certificate II in Auslan</h3>
+                        <p>Melbourne Polytechnic / 2019</p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="content-card resume-card">
+                    <p class="eyebrow">Relevant Professional Experience</p>
+                    <div class="credit-list">
+                      <div class="credit-item">
+                        <h3>Support Artist</h3>
+                        <p>City of Voices / 2024-Present</p>
+                        <ul class="resume-points">
+                          <li>Supported participants with disabilities or mental health challenges to develop creative skills and participate in theatrical performances.</li>
+                          <li>Fostered inclusive environments to encourage self-expression and community connection.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Counsellor</h3>
+                        <p>Kingswood College / 2024</p>
+                        <ul class="resume-points">
+                          <li>Delivered one-on-one counselling to students from prep to Year 12 face-to-face, virtually, and by phone.</li>
+                          <li>Facilitated group art therapy and social skills sessions for students.</li>
+                          <li>Maintained detailed client notes and participated in clinical supervision.</li>
+                          <li>Developed expertise in trauma-informed care and creative counselling approaches.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Visitor Experience Assistant and Access Usher</h3>
+                        <p>Arts Centre Melbourne / 2019-2024</p>
+                        <ul class="resume-points">
+                          <li>Provided exceptional support to patrons with access needs, ensuring a safe and enjoyable theatre experience.</li>
+                          <li>Assisted with accessibility planning and engagement strategies for events.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Marketing Manager and Jeweller</h3>
+                        <p>Sand Maid Jewellery / 2020-Present</p>
+                        <ul class="resume-points">
+                          <li>Managed Instagram and Etsy accounts, organised and managed stalls at artist markets, and handcrafted artisanal jewellery.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Events and Promotions Facilitator</h3>
+                        <p>Direct Image / 2019-2020</p>
+                        <ul class="resume-points">
+                          <li>Facilitated art and craft workshops, and other promotional encounters with young people in public spaces.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="content-card resume-card">
+                    <p class="eyebrow">Volunteering Experience</p>
+                    <div class="credit-list">
+                      <div class="credit-item">
+                        <h3>FriendLine Volunteer</h3>
+                        <p>Friends for Good / 2021-2024</p>
+                        <ul class="resume-points">
+                          <li>I answer anonymous phone calls for the FriendLine phone service.</li>
+                          <li>I provide companionship for people experiencing loneliness.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Communications Assistant</h3>
+                        <p>Human Rights Arts and Film Festival / 2019</p>
+                        <ul class="resume-points">
+                          <li>Included providing free communications support for the HRAFF.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Stage Manager</h3>
+                        <p>Safe Theatres Australia Forum / 2019</p>
+                        <ul class="resume-points">
+                          <li>I ensured that this forum that ensured theatres in Australia supported victims of sexual assault ran smoothly and was a safe and accessible environment.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Tutor</h3>
+                        <p>African Kids Reading Club / 2014-2015</p>
+                        <ul class="resume-points">
+                          <li>I tutored and facilitated games and activities for primary school aged children.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="resume-stack">
+                  <article class="content-card content-card--accent resume-card">
+                    <p class="eyebrow">Playwriting Credits</p>
+                    <div class="credit-list">
+                      <div class="credit-item">
+                        <h3>An Organised Odyssey</h3>
+                        <p>Produced by Weilding Theatre / Presented at Testing Grounds, 2024</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>The Cave of Spleen</h3>
+                        <p>Produced by Theatre Works / Presented at the Explosives Factory, 2023</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Bleached</h3>
+                        <p>Produced by Wit Incorporated / Presented at Bluestone Church, 2023</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Alternative Futures (one of six writers)</h3>
+                        <p>Produced by Theatre Works and the Acland Street Traders Association / Presented at Acland Street (roving), 2021</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Stargazers (one of twelve writers)</h3>
+                        <p>Produced by Periscope Productions / Presented at Melbourne Fringe Festival (online), 2020</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Plastisphere (lead artist and head of community engagement)</h3>
+                        <p>Presented at Adelaide Fringe Festival by Treasury 1860 / Installed in The Long Room, 2020</p>
+                        <p>Presented at Melbourne Fringe Festival by Coburg Carnivale / Installed in Coburg Library, 2019</p>
+                        <p>Presented at Zero Waste Festival by Zero Waste Victoria / Installed at St Kilda Town Hall, 2019</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>FREEFALL (co-writer)</h3>
+                        <p>Produced by Weilding Theatre / Performed at Melbourne Fringe Festival in The Burrow, 2018</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>A Dog Called Monkey</h3>
+                        <p>Produced by Tallulah Theatre / Presented at Northcote Town Hall, 2017</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Kick-ons</h3>
+                        <p>Produced by the Ormond College Drama Club / Presented at The Chapel, 2015</p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="content-card resume-card">
+                    <p class="eyebrow">Awards</p>
+                    <div class="credit-list">
+                      <div class="credit-item">
+                        <h3>BankSA Award for Visual Art and Design</h3>
+                        <p>Adelaide Fringe Festival / 2020</p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Hannah Barry Memorial Award for the Performing Arts</h3>
+                        <p>Union House Theatre Awards / 2016</p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="content-card resume-card">
+                    <p class="eyebrow">Residencies</p>
+                    <div class="credit-list">
+                      <div class="credit-item">
+                        <h3>Greenhouse: National Artist Residency</h3>
+                        <p>Hothouse Theatre / 2023</p>
+                        <ul class="resume-points">
+                          <li>Included artistic development and workshop facilitation with local community.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>She Writes Program</h3>
+                        <p>Theatre Works / 2020-2021</p>
+                        <ul class="resume-points">
+                          <li>Included artistic development and a staged reading.</li>
+                        </ul>
+                      </div>
+                      <div class="credit-item">
+                        <h3>International Interdisciplinary Residency</h3>
+                        <p>Hospitalfield House / 2020</p>
+                        <ul class="resume-points">
+                          <li>Included artistic development and workshop facilitation with fellow artists.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="content-card resume-card">
+                    <p class="eyebrow">References</p>
+                    <div class="resume-reference-list">
+                      <div class="credit-item">
+                        <h3>Dr Belinda Goldsworthy</h3>
+                        <p>Supervisor and Psychologist at Kingswood College</p>
+                        <p><a class="resume-inline-link" href="mailto:bgo@luther.vic.edu.au">bgo@luther.vic.edu.au</a></p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Clarisse Bonello</h3>
+                        <p>Artistic Director of City of Voices</p>
+                        <p><a class="resume-inline-link" href="mailto:cov@southportcc.org.au">cov@southportcc.org.au</a></p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Cicely Farrer</h3>
+                        <p>Hospitalfield Programme and Communications Manager</p>
+                        <p><a class="resume-inline-link" href="mailto:cicely@hospitalfield.org.uk">cicely@hospitalfield.org.uk</a></p>
+                      </div>
+                      <div class="credit-item">
+                        <h3>Freya McGrath</h3>
+                        <p>Performance maker and Producer</p>
+                        <p><a class="resume-inline-link" href="tel:0419199302">0419 199 302</a></p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" tabindex="0" hidden>
+            <div class="plays-layout">
+              <div class="plays-list" id="plays-list" aria-live="polite"></div>
+
+              <article class="content-card plays-unassigned" id="unassigned-sources">
+                <p class="eyebrow">Supplied Sources</p>
+                <h3>Links kept separate from play entries</h3>
+                <p class="plays-unassigned__note">
+                  These supplied links are preserved exactly as given and left unassigned when the accessible source text does not expose a clear play title without extra interpretation.
+                </p>
+                <ul class="play-link-list" id="unassigned-source-list"></ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="0" hidden>
+            <div class="panel-grid panel-grid--contact">
+              <article class="content-card">
+                <p class="eyebrow">Contact</p>
+                <h3>Get in touch</h3>
+                <div class="contact-list">
+                  <a class="contact-item" href="mailto:laura.rose.collins1@gmail.com">laura.rose.collins1@gmail.com</a>
+                  <a class="contact-item" href="tel:0449817371">0449 817 371</a>
+                  <div class="contact-item">Unit 6/1 Collins St, Thornbury, VIC 3071</div>
+                  <div class="contact-item">Master of Counselling • Master of Writing for Performance</div>
+                </div>
+              </article>
+
+              <article class="content-card content-card--accent">
+                <p class="eyebrow">For</p>
+                <h3>Counselling, workshops, writing, and creative collaboration</h3>
+                <p>Available for counselling work, inclusive artmaking, workshop facilitation, performance development, and socially engaged creative projects.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer reveal">
+      <p>Laura</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
