@@ -27,7 +27,6 @@ const providedLinks = {
 
 const playImages = {
   dogCalledMonkey: [
-    "images/dog_called_monkey.jpg",
     "images/A DOG CALLED MONKEY_POSTER.JPG",
     "images/A DOG CALLED MONKEY 03.PNG",
     "images/A DOG CALLED MONKEY 04.PNG",
@@ -58,7 +57,6 @@ const playImages = {
     "images/KALEIDOSCOPE_10.jpeg",
   ],
   bleached: [
-    "images/BLEACHED_00.jpg",
     "images/BLEACHED_01.jpg",
     "images/BLEACHED_02.jpg",
     "images/BLEACHED_03.jpg",

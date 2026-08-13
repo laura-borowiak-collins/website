@@ -1,6 +1,6 @@
 # Laura Website
 
-This is a lightweight static portfolio and resume website for Laura.
+This is a lightweight static portfolio website for Laura.
 
 ## Files
 
@@ -13,8 +13,7 @@ This is a lightweight static portfolio and resume website for Laura.
 
 1. Open `index.html` in a browser to preview the site.
 2. Edit the text in `index.html` to add Laura's exact biography, credits, dates, and links.
-3. Replace the placeholder contact links in the `Contact` tab before publishing.
-4. If you have a PDF resume, add it to the project folder and link it from the contact area.
+3. Check the contact email in the `Contact` tab before publishing.
 
 ## Hosting
 

@@ -498,28 +498,6 @@ p {
   max-width: 34rem;
 }
 
-.resume-contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin: 1rem 0 1.1rem;
-}
-
-.resume-chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.35rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(31, 43, 42, 0.12);
-  background: rgba(255, 255, 255, 0.58);
-  color: var(--ink);
-  font-size: 0.94rem;
-  font-weight: 700;
-  line-height: 1.4;
-  text-decoration: none;
-}
-
 .resume-points {
   display: grid;
   gap: 0.45rem;
@@ -530,19 +508,6 @@ p {
 
 .resume-points li {
   line-height: 1.6;
-}
-
-.resume-reference-list {
-  display: grid;
-  gap: 0.95rem;
-  margin-top: 1rem;
-}
-
-.resume-inline-link {
-  color: var(--accent-deep);
-  font-weight: 700;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.16em;
 }
 
 .project-card {
@@ -778,10 +743,6 @@ p {
   .panel-grid--work,
   .panel-grid--contact {
     grid-template-columns: 1fr;
-  }
-
-  .resume-contact-grid {
-    display: grid;
   }
 
   .hero__gallery {
